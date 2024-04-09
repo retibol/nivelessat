@@ -32,7 +32,8 @@ def extrae_medida(ip):
   if len(host) < 6:
     print("la ipi no es valida")
     quit()
-    
+
+   
   # Conectamos al servidor  por telnet
   tel = telnetlib.Telnet(host, 23, timeout=2) # Realizamos la conexion
   tel.read_until(b"Password:")                # Esperamos a que cargue la aplicacion 

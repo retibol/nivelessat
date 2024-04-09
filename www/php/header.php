@@ -127,7 +127,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Graficos
                             </a>
-                            <a class="nav-link" href="tabla.php">
+                            <a class="nav-link" href="medidas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tablas
                             </a>

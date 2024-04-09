@@ -27,6 +27,13 @@ for x in ipValidos:
 linea=linea+"\t"+"segundos"
 print(linea)
 i=0
+#x[0] = id del equipo
+#x[1] = nombre del  equipo
+#x[2] = ip del  equipo
+#x[3] = valor minimo del equipo
+#x[4] = valor maximo del  equipo
+
+idEquipo = x[0]
 #for i in range(30):
 while 1:
     #print(str(i) + "---- Medida------")
@@ -38,7 +45,9 @@ while 1:
     linea=str(z)+"\t"    
     for x in ipValidos:
         #print(x[1])
-        
+        idEquipo = x[0]
+        val_min = x[3]
+        val_max = x[4]
         medida=modulo_fun.extrae_medida(x[2])
         if medida == 0.0:
             medida=modulo_fun.extrae_medida(x[2])
@@ -47,7 +56,12 @@ while 1:
                 if medida == 0.0:
                     medida=modulo_fun.extrae_medida(x[2])                
         linea=linea+str(medida)+"\t\t"
-        modulo_db.guardaMedidaxId(x[0],medida)
+        modulo_db.guardaMedidaxId(x[0],medida)              # Guarda la medida en la base de datos
+        modulo_db.insertaAlarma(idEquipo)                   # Guarda la alarma que geneta la medida
+        
+        
+                
+            
 
     y = datetime.datetime.now()
     a = int(z.second)

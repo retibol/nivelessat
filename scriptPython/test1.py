@@ -1,6 +1,3 @@
-import modulo_nivelessat
+import modulo_db
 
-num = modulo_nivelessat.extrae_medida("192.168.1.41")
-
-print("valor devuelto por la funcion: ")
-print(num)
+modulo_db.insertaAlarma(2)
